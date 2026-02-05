@@ -1,0 +1,267 @@
+
+
+.recLayout{
+    display: flex;
+    gap: 24px;
+}
+
+.secondeHeaderB{
+    width:699px ;
+    height: 742px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 32px;
+
+}
+
+.reInputBorder{
+    width: 320px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bord{
+    border: 1px solid;
+    border: 0px 0px 0px 1px;
+    margin-top: 16px;
+}
+
+@media (min-width:1024px){
+  
+
+   .recLayout {
+       display: flex;
+       
+       gap: 24px;
+   }
+
+        .recDisplay {
+            display: flex;
+            flex-direction: column;
+    
+            gap: 16px;
+        }
+          .RecBorder {
+              display: flex;
+             flex-direction: column;
+              flex-basis: 337px;
+              max-height: 190px;
+              height: auto;
+              flex-shrink: 1;
+              flex-grow: 1;
+              width: 100%;
+              gap: 20px;
+              padding: 24px;
+              background-color: #201F24;
+              border-radius: 12px;
+          }
+    
+          .RecBorderB {
+              flex-basis: 337px;
+              max-height: 190px;
+              width: 100%;
+              height: auto;
+              flex-shrink: 1;
+              flex-grow: 1;
+    
+              padding: 20px;
+             margin-top: 20px;
+              border-radius: 12px;
+              background-color: white;
+          }
+          
+                  .recDisplay {
+                      display: flex;
+                      flex-direction: row;
+        
+                      gap: 16px;
+                  }
+          .secondeHeaderB {
+              flex-basis: 688px;
+              max-height: 742px;
+              width: 100%;
+              height: auto;
+              flex-shrink: 1;
+              flex-grow: 1;
+              background-color: white;
+             
+              border-radius: 12px;
+              padding: 32px;
+    
+    
+          }
+
+                   .recLgHidden {
+                       display: none;
+                   }
+
+                                   .padRec {
+                                       padding: 40px 32px 40px 32px;
+                                   }
+
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+   
+
+         .recLayout {
+             display: flex;
+             flex-direction: column;
+             gap: 24px;
+             overflow: hidden;
+    
+         }
+
+         .recMdHidden {
+             display: none;
+         }
+         .RecBorder {
+             display: flex;
+             flex-direction: column;
+             flex-basis: 322px;
+             max-height: 204px;
+             flex-shrink: 1;
+             flex-grow: 1;
+             width: 100%;
+             gap: 20px;
+             padding: 24px;
+             background-color: #201F24;
+             border-radius: 12px;
+         }
+    
+         .RecBorderB {
+             flex-basis: 322px;
+             height: 204px;
+             width: 100%;
+             height: auto;
+             flex-shrink: 1;
+             flex-grow: 1;
+              gap: 10px;
+             padding: 20px;
+            
+             border-radius: 12px;
+             background-color: white;
+         }
+
+                 .recDisplay {
+                     display: flex;
+                     flex-direction: row;
+        
+                     gap: 16px;
+                 }
+
+.secondeHeaderB {
+    flex-basis: 343px;
+    max-height: 826px;
+    width: 100%;
+    height: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 12px;
+    padding: 32px;
+
+
+}
+
+ .padRec {
+     padding: 40px 32px 40px 32px;
+ }
+                  
+}
+
+@media (min-width:343px) and (max-width:764px){
+    
+    .padRec{
+        padding: 24px 16px 24px 16px;
+    }
+    .recLayout {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            overflow: hidden;
+        
+        }
+
+        .recHidden {
+            display: none;
+        }
+
+        .recDisplay {
+            display: flex;
+            flex-direction: column;
+           
+            gap: 16px;
+        }
+
+           .RecBorder {
+            display: flex;
+            
+           
+               flex-basis: 343px;
+               height: 118px;
+               flex-shrink: 1;
+               flex-grow: 1;
+                width: 100%;
+                gap: 20px;
+               padding: 24px;
+               background-color: #201F24;
+               border-radius: 12px;
+           }
+    
+           .RecBorderB {
+               flex-basis: 343px;
+               max-height: 204px;
+               width: 100%;
+               height: auto;
+                flex-shrink: 1;
+                flex-grow: 1;
+
+               padding: 20px;
+             margin-top: 20px;
+               border-radius: 12px;
+               background-color: white;
+           }
+                .secondeHeaderB {
+                    flex-basis: 343px;
+                    height: 826px;
+                    width: 100%;
+                    height: auto;
+                    flex-shrink: 1;
+                    flex-grow: 1;
+                    background-color: white;
+                    border-radius: 12px;
+                    padding: 32px;
+                   
+        
+                }
+           .reInputBorder {
+               flex-basis: 259px;
+               width: 100%;
+               flex-shrink: 1;
+               flex-grow: 1;
+               height: 45px;
+               border: 1px solid;
+               border-radius: 8px;
+               padding-left: 20px;
+               padding-top: 12px;
+               padding-right: 16px;
+               padding-bottom: 12px;
+               display: flex;
+              
+           }
+    
+           .bord {
+               border: 1px solid;
+               border: 0px 0px 0px 1px;
+               width: 100%;
+               margin-top: 16px;
+           }
+}

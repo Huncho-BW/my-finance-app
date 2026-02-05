@@ -1,0 +1,220 @@
+
+.potLayout{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    gap: 24px;
+}
+.secondSec{
+    width: 518px;
+    height: 303px;
+    padding: 24px;
+    background-color: #ffff;
+}
+
+.barOne{
+    width: 470px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #F8F4F0;
+}
+.barTwo{
+     
+    height: 4px;
+    border-radius: 4px;
+    
+    
+}
+
+.potButton{
+    width: 227px;
+    height: 53px;
+    padding:16px; 
+    border-radius:8px ;
+    background-color:#F8F4F0 ;
+
+
+}
+
+.potButton:hover{
+background-color: white;
+border: 2px solid#F8F4F0 ;
+transition: 0.3s ease-in-out;
+}
+
+@media (min-width:343px) and (max-width:764px){
+    .potLayout {
+            display: flex;
+            flex-direction: column;
+          
+            gap: 24px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+                .secondSec {
+                    flex-basis: 343px;
+                    max-height: 317px;
+                    flex-basis: 1;
+                    flex-shrink: 1;
+                    height: auto;
+                    width: 100%;
+                    padding: 24px;
+                    background-color: #ffff;
+                  
+                }
+
+                 .barOne {
+                     flex-basis: 303px;
+                     width: 100%;
+                     height: 8px;
+                     flex-shrink: 1;
+                     flex-grow: 1;
+                     border-radius: 4px;
+                     background-color: #F8F4F0;
+                 }
+        
+                 .barTwo {
+                     flex-basis: 303px;
+                     flex-grow: 1;
+                     flex-shrink: 1;
+                    
+                     height: 4px;
+                     border-radius: 4px;
+        
+                 }
+
+          .potButton {
+              flex-basis: 143.5px;
+              min-height: 53px;
+              height: auto;
+              padding: 16px;
+              flex-grow: 1;
+              flex-shrink: 1;
+              border-radius: 8px;
+              background-color: #F8F4F0;
+              
+                width: 100%;
+    
+          }
+}
+
+@media (min-width:768px) and (max-width:1023px){
+ 
+    .potLayout {
+            display: flex;
+            flex-direction: column;
+    
+            gap: 24px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    
+        .secondSec {
+            flex-basis: 343px;
+            max-height: 317px;
+            flex-basis: 1;
+            flex-shrink: 1;
+            height: auto;
+            width: 100%;
+            padding: 24px;
+            background-color: #ffff;
+    
+        }
+
+                .barOne {
+                    flex-basis: 470px;
+                    width: 100%;
+                    height: 8px;
+                    flex-shrink: 1;
+                    flex-grow: 1;
+                    border-radius: 4px;
+                    background-color: #F8F4F0;
+                }
+        
+                .barTwo {
+                        flex-basis: 470px;
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                    height: 4px;
+                    border-radius: 4px;
+        
+                }
+                .potButton {
+                    flex-basis: 312px;
+                    max-height: 53px;
+                    padding: 16px;
+                    width: 100%;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    border-radius: 8px;
+                    background-color: #F8F4F0;
+        
+        
+        
+                }
+}
+
+
+@media (min-width:1024px){
+    .potLayout{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
+        gap: 24px;
+
+      
+
+        
+        
+            overflow: hidden;
+    }
+
+  .secondSec {
+      flex-basis: 518px;
+      max-height: 303px;
+
+      flex-basis: 1;
+      flex-shrink: 1;
+      height: auto;
+      width: 100%;
+      padding: 24px;
+      background-color: #ffff;
+
+  }
+
+  .barOne {
+      flex-basis: 470px;
+      width: 100%;
+      height: 8px;
+      flex-shrink: 1;
+      flex-grow: 1;
+      border-radius: 4px;
+      background-color: #F8F4F0;
+  }
+
+  .barTwo {
+      flex-basis: 470px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      height: 4px;
+      border-radius: 4px;
+
+  }
+
+  .potButton {
+      flex-basis: 277px;
+      max-height: 53px;
+      padding: 16px;
+      width: 100%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      border-radius: 8px;
+      background-color: #F8F4F0;
+
+
+
+  }
+}

@@ -1,0 +1,625 @@
+
+
+
+
+.nav:hover .icon {
+    color: #F2F2F2;
+    transition: 0.5s ease-in-out;
+   
+}
+
+.nav:hover aside{
+    color: #F2F2F2;
+    transition: 0.5s ease-in-out;
+}
+
+.dropDwon{
+  background-color: white;
+  text-align: justify;
+  display: block;
+  color: black;
+  padding: 12px 20px 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px rgba(0,0,0, 0.5);
+    margin-top: 8px;
+    
+   transition: all 0.3s ease-in-out;
+}
+
+.sortBorder{
+    position: relative;
+    width: 100%;
+    max-width:74px;
+    height: 1px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #F2F2F2;
+}
+
+.filterBorder{
+    position: relative;
+        width: 100%;
+        max-width: 137px;
+        height: 1px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #F2F2F2;
+}
+
+.inputBord{
+    flex-basis: 996px;
+    height: 45px;
+    min-width: 0px;
+
+    flex-shrink: 1;
+   
+
+    
+}
+
+.listBord{
+    flex-basis: 996px;
+        height: 42px;
+        min-width: 0px;
+        
+        flex-shrink: 1;
+        
+       
+}
+
+.listBordTwo{
+    flex-basis: 996px;
+        height: 696px;
+        min-width: 0px;
+        flex-shrink: 1;
+}
+
+.buttonbord{
+    flex-basis: 996px;
+        height: 64px;
+        min-width: 0px;
+        flex-shrink: 1;
+       
+}
+
+
+
+.seeAll:hover{
+color: #201F24;
+transform: translateY(-10px);
+ transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+.seeAll{
+    color:#696868 ;
+    transition: 0.5s ease-in-out;
+}
+
+input::placeholder{
+color: #98908B;
+
+transition: 0.3 ease-in-out ;
+}
+input:hover::placeholder{
+
+color: #201F24;
+transform: translateY(-10);
+transition: 0.3s ease-in-out;
+}
+
+
+
+
+
+.prevBorder{
+    width: 93px ;
+    height: 40px ;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-left: 9.5px;
+    padding-top: 9.5px;
+    padding-bottom: 9.5px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    
+}
+
+.pageBorder{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    color: black;
+    
+   
+}
+.pageBorder:hover{
+   
+    background-color: #98908B;
+        outline: none;
+        box-shadow: rgba(0, 0, 0, 0.5);
+        color: #F2F2F2;
+        transform: scale(1.1);
+        transition: 0.5s ease-in-out;
+
+}
+
+.prevBorder:hover{
+background-color: #98908B;
+    outline: none;
+    box-shadow: rgba(0,0,0, 0.5);
+    color: #F2F2F2;
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+
+@media (min-width:1024px) {
+
+    .slidebar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            margin-top: 4px;
+    
+            padding-right: 32px;
+            padding-left: 32px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+    
+        }
+
+    .parSection {
+      
+        overflow: hidden;
+          padding-left: 40px;
+          padding-right: 40px;
+          padding-top: 32px;
+        }
+
+                  .tracHeading {
+                      font-size: 32px;
+                      font-weight: 700;
+                      padding-top: 9px;
+                      padding-bottom: 9px;
+                  }
+        
+                  .chilBack {
+        
+                     flex-basis: 1060px;
+                     
+                       
+                        width: 100%;
+                      min-width: 0px;
+        
+                      
+                       }
+                       
+          .inputBord {
+              flex-basis: 996px;
+             min-height: 45px; height: auto;
+              min-width: 0px;
+            padding-left: 32px ;
+            padding-right: 32px;
+            padding-top: 32px;
+              flex-shrink: 1;
+    
+    
+    
+          }
+    
+          .listBord {
+              flex-basis: 996px;
+              min-height: 42px;
+              height: auto;
+              min-width: 0px;
+             padding-left: 32px;
+             padding-right: 32px;
+              flex-shrink: 1;
+    
+    
+          }
+    
+          .listBordTwo {
+              flex-basis: 996px;
+              min-height: 696px;
+              height: auto;
+              min-width: 0px;
+              flex-shrink: 1;
+             padding-left: 32px;
+                padding-right: 32px;
+              
+             
+          }
+    
+          .buttonbord {
+              flex-basis: 996px;
+              height: 64px;
+              min-width: 0px;
+              flex-shrink: 1;
+    
+          }
+    
+          .input {
+              flex-basis: 320px;
+              height: 45px;
+              flex-shrink: 1;
+              border: 1px solid;
+              border-radius: 10px;
+              padding-left: 20px;
+              padding-top: 12px;
+              padding-right: 20px;
+              padding-bottom: 12px;
+              font-size: 14px;
+              font-weight: 400;
+              font-style: normal;
+             
+    
+          }
+    
+          .sortButton {
+              width: 113px;
+              height: 45px;
+              border: 1px solid;
+              border-radius: 10px;
+             display: flex;
+             justify-content: end;
+              padding: 12px 16px 12px 16px;
+              margin-left: 12px;
+    
+    
+          }
+    
+         
+    
+        
+    
+          .catButton {
+              width: 177px;
+              height: 45px;
+              border: 1px solid;
+              border-radius: 10px;
+              display: flex;
+              justify-content: end;
+            padding: 12px 16px 12px 16px;
+            margin-left: 12px;
+          }
+    
+          .prevBorder {
+              width: 93px;
+              height: 40px;
+              border: 1px solid;
+              border-radius: 10px;
+              padding-left: 9.5px;
+              padding-top: 9.5px;
+              padding-bottom: 9.5px;
+              font-weight: 400;
+              font-style: normal;
+              font-size: 14px;
+    
+          }
+    
+          .pageBorder {
+              width: 40px;
+              height: 40px;
+              border: 1px solid;
+              border-radius: 8px;
+              color:black;
+          }
+
+                                   .lgHidLabel {
+                                       display: none;
+                                   }
+                
+.isActive {
+    max-width: 217px;
+    height: 56px;
+    background-color: white;
+
+    border-left: 4px solid green;
+    border-radius: 0px 12px 12px 0px;
+}
+        .tranListFirst {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+               
+                                .trdH {
+                                    display: flex;
+                                    justify-content: space-between;
+                                }
+
+}
+
+ @media (min-width:763px) and (max-width:1023px) {
+    
+    .catButton {
+            width: 177px;
+            height: 45px;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 12px 16px 12px 16px;
+            margin-left: 12px;
+        }
+    .sortButton {
+            width: 113px;
+            height: 45px;
+            border: 1px solid;
+            border-radius: 10px;
+    
+            padding: 12px 16px 12px 16px;
+            margin-left: 12px;
+    
+    
+        }
+    
+    .parSection {
+    
+            padding-top: 24px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+
+
+
+                .tracHeading {
+                    font-size: 32px;
+                    font-weight: 700;
+                    padding-top: 9px;
+                    padding-bottom: 9px;
+                }
+
+                .chilBack {
+        
+                    flex-basis: 1060px;
+        
+                    width: 100%;
+        
+                    padding: 20px;
+        
+                }
+
+                 .inputBord {
+                    flex-basis: 624px;
+                    height: 45px;
+                    width: 100%;
+                  
+                    
+                 
+                    
+                }
+
+                                 .input {
+                                     flex-basis: 161px;
+                                     height: 45px;
+                                     border: 1px solid;
+                                     border-radius: 10px;
+                                     padding-left: 20px;
+                                     padding-top: 12px;
+                                     padding-right: 20px;
+                                     padding-bottom: 12px;
+                                     font-size: 14px;
+                                     font-weight: 400;
+                                     font-style: normal;
+                                   
+                
+                                     
+                                    
+                
+                                 }
+
+
+
+                                .mdHidLabel {
+                                    display: none;
+                                }
+
+                                                                 .slidebar:hover {
+                                                                     color: white;
+                                
+                                                                 }
+
+
+                                                .slidebar {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                   
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    padding-top: 8px;
+                                                    padding-bottom: 12px;
+                                                    gap: 4px;
+                                                   
+                        
+                                                }
+                        
+                                                .isActive {
+                                                    width: 104px;
+                                                    height: 66px;
+                                                    background-color: white;
+                                                 
+                                                  
+                                                    border-bottom: 4px solid green;
+                                                    border-radius: 12px 12px 0px 0px;
+                                                }
+
+                                                                                                 .tranListFirst {
+                                                                                                     display: flex;
+                                                                                                     justify-content: flex-start;
+                                                                                                     gap: 10px;
+                                                                                                 }
+ }
+
+@media (min-width:343px) and (max-width:764px)   {
+   
+
+
+.dropDwon {
+    position: absolute;
+    right: 30px;
+        background-color: white;
+        text-align: justify;
+        display: block;
+        color: black;
+        padding: 12px 20px 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+        margin-top: 8px;
+
+        transition: all 0.3s ease-in-out;
+    }
+
+    .parSection{
+        
+        padding-top: 24px;
+        padding-left: 16px ;
+        padding-right: 16px ;
+    }
+
+    .chilBack{
+       
+        flex-basis:343px ;
+      
+        width: 100%;
+
+        padding: 20px;
+        overflow-y: visible;
+      
+       
+    }
+
+        .tracHeading{
+            font-size: 32px;
+            font-weight: 700;
+            padding-top:9px ;
+            padding-bottom: 9px;
+        }
+
+        .sortButton{
+           border: none;
+        }
+
+        .sortIcon{
+            display: flex;
+            justify-content: end;
+            width: 100%;
+           gap: 10px;
+            padding: 12px 16px 12px 16px;
+        }
+
+                .sortIco {
+                    display: flex;
+                    justify-content: end;
+                    width: 100%;
+                    
+                    
+                }
+
+        .catButton{
+            border: none;
+        }
+
+
+                .inputBord {
+                    flex-basis: 303px;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    height: 45px;
+                    width: 100%;
+                   
+                   display: flex;
+                   justify-content: space-evenly;
+                    
+                ;
+                    
+                }
+  .input {
+      max-width: 215px;
+      height: 45px;
+      flex-shrink: 1;
+      width: 100%;
+    
+     
+   
+      border: 1px solid ;
+      border-radius: 10px;
+      padding-left: 12px;
+      padding-top: 12px;
+      padding-right: 12px;
+      padding-bottom: 12px;
+      
+     
+      
+
+  }
+  .searchBut{
+    position:relative;
+    right: 30px;
+    
+  }
+
+  .prevBorder {
+      width: 48px;
+      height: 40px;
+      border: 1px solid;
+      border-radius: 10px;
+      padding-left: 9.5px;
+      padding-top: 9.5px;
+      padding-bottom: 9.5px;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+
+  }
+
+  .hidLabel{
+    display: none;
+  }
+
+   .tranHad {
+       display: flex;
+       flex-direction: column;
+      
+      
+   }
+
+   .tranHid{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 35px;
+   }
+
+  
+
+
+   .slidebar {
+       display: flex;
+       flex-direction: column;
+
+       align-items: center;
+       justify-content: center;
+       padding-top: 8px;
+       padding-bottom: 12px;
+       gap: 4px;
+
+
+   }
+  
+
+          .isActive {
+              width: 68.6px;
+              height: 44px;
+              background-color: white;
+    
+    
+              border-bottom: 4px solid green;
+              border-radius: 12px 12px 0px 0px;
+          }
+}
