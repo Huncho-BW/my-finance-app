@@ -150,7 +150,7 @@ export default function Pots() {
                     setActionTwo(false);
                     setActionThree(item.name);
                   }}
-                  className="potButton"
+                  className="potButton text-[14px] font-[700]"
                 >
                   +Add Money
                 </button>
@@ -170,9 +170,9 @@ export default function Pots() {
                     setActionTwo(false);
                     setActionFour(item.name);
                   }}
-                  className="potButton"
+                  className="potButton text-[14px] font-[700]"
                 >
-                  Withdrawel Money
+                  Withdrawel
                 </button>
 
                 {actionFour === item.name && (

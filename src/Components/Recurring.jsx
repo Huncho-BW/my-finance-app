@@ -78,7 +78,7 @@ export default function RecurringBill() {
   console.log("sorted decending date ", uniqueDate);
 
   return (
-    <div className=" padRec  ">
+    <div className=" padRec   ">
       <section className="header">
         <h1 className=" tracHeading"> Recurring</h1>
       </section>
@@ -135,10 +135,10 @@ export default function RecurringBill() {
           </div>
         </section>
         <section className="secondeHeaderB">
-          <div className=" flex inputBord  justify-between ">
-            <div className="input flex justify-between">
+          <div className=" flex inputBord  justify-between relative ">
+            <div className="input relative flex justify-between">
               <input
-                className="focus:outline-none relative"
+                className="focus:outline-none "
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -158,7 +158,7 @@ export default function RecurringBill() {
               )}
             </div>
 
-            <div className=" flex  sortIco ">
+            <div className=" flex  sortIco">
               <label className="recHidden pt-[12px] pb-[12px] ">Sort By</label>
               <div className="sortButton   pt-[12px] pb-[12px] pr-[16px] pl-[20px] ml-[12px]  relative ">
                 <button onClick={() => setOpen(!open)}>

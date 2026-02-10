@@ -29,13 +29,14 @@ export default function EditPot({ onClose, potsId }) {
   const [data, setData] = useState(dataJson.pots);
   const Max_Chart = 30;
   const leftChart = Max_Chart - name.length;
-
+  const handleSubmit = () => {
+    onClose();
+  };
   useEffect(() => {
     const currentPots = data.find((b) => b.name === potsId);
     if (currentPots) {
       setName(currentPots.name);
       setAmount(currentPots.total);
-      setTheme(currentPots.theme);
     }
     setLoading(false);
   }, [potsId]);
@@ -136,7 +137,10 @@ export default function EditPot({ onClose, potsId }) {
           )}
         </div>
         <div className="borderInputSaved bg-[#201F24] mt-[20px] flex-col justify-items-center   ">
-          <button className="  text-[#FFFFFF] text-center  ">
+          <button
+            onClick={handleSubmit}
+            className="  text-[#FFFFFF] text-center  "
+          >
             Save Change
           </button>
         </div>

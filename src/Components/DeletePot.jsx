@@ -20,17 +20,15 @@ export default function DeletePots({ onClose }) {
         </p>
       </div>
 
-      <div
-        onClick={handleSubmit}
-        className="borderDelete flex-col justify-items-center   mt-[20px]"
-      >
-        <p className="text-[#FFFFFF] text-center  ">Yes, Confirm Deletion</p>
+      <div className="borderDelete flex-col justify-items-center   mt-[20px]">
+        <p onClick={handleSubmit} className="text-[#FFFFFF] text-center  ">
+          Yes, Confirm Deletion
+        </p>
       </div>
-      <div
-        onClick={handleSubmit}
-        className=" flex-col justify-items-center  mt-[20px]"
-      >
-        <p className="text-center ">No, Go Back</p>
+      <div className=" flex-col justify-items-center  mt-[20px]">
+        <p onClick={handleSubmit} className="text-center ">
+          No, Go Back
+        </p>
       </div>
     </div>
   );

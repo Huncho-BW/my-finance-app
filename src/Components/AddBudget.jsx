@@ -59,14 +59,14 @@ export default function AddBudget({ onClose }) {
           </label>
           <div className="borderInput">
             <button
-              onClick={() => setAction(true)}
+              onClick={() => setAction(!action)}
               className="flex justify-between w-full pl-[20px] pr-[20px] pt-[12px] pb-[12px]"
             >
               {cate} <ArrowDropDownIcon />
             </button>
           </div>
           {action && (
-            <ul className="bg-[#FFFFFF]">
+            <ul className=" colorBoder">
               {data.map((item, i) => {
                 return (
                   <li
@@ -95,7 +95,10 @@ export default function AddBudget({ onClose }) {
             </span>
             <input
               className="outline-none absolute  top-[25%] left-[45px]  "
-              type="text"
+              type="number"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              inputmode="numeric"
+              pattern="[0-9]*"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="e.g. 2000"
@@ -106,7 +109,7 @@ export default function AddBudget({ onClose }) {
           <label className="font-[700] text-[12px] text-[#696868]">Theme</label>
           <div className="relative borderInput flex relative">
             <button
-              onClick={() => setActionTwo(true)}
+              onClick={() => setActionTwo(!actionTwo)}
               className="flex p-[20px] relative"
             >
               <div
@@ -155,7 +158,7 @@ export default function AddBudget({ onClose }) {
             onClick={handleSubmit}
             className="  text-[#FFFFFF] text-center  "
           >
-            Add pots
+            Add Budget
           </button>
         </div>
       </div>

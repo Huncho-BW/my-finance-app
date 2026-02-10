@@ -10,6 +10,9 @@ export default function AddSaving({ onClose, withdrawId }) {
   const [theme, setTheme] = useState("");
   const [loading, setLoading] = useState(true);
   const [data, setdata] = useState(dataJson.pots);
+  const handleSubmit = () => {
+    onClose();
+  };
 
   useEffect(() => {
     const currentSaving = data.find((n) => n.name === withdrawId);
@@ -107,7 +110,12 @@ export default function AddSaving({ onClose, withdrawId }) {
         </div>
       </div>
       <div className="borderInputSaved bg-[#201F24] mt-[20px] flex-col justify-items-center ">
-        <button className="  text-[#FFFFFF] text-center  ">Add pots</button>
+        <button
+          onClick={handleSubmit}
+          className="  text-[#FFFFFF] text-center  "
+        >
+          Confirm Withdrawal
+        </button>
       </div>
     </div>
   );

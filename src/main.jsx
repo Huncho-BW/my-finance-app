@@ -6,6 +6,7 @@ import "./budget.css";
 import "./pot.css";
 import "./recurring.css";
 import App from "./App.jsx";
+import "@fontsource/public-sans"; // defaults to weight 400
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

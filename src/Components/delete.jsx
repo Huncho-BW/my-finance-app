@@ -1,6 +1,10 @@
 import React from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 export default function Delete({ onClose }) {
+  function handleSubmit() {
+    onClose();
+  }
+
   return (
     <div className="DeleteBorder">
       <div className=" flex items-center justify-between">
@@ -17,10 +21,14 @@ export default function Delete({ onClose }) {
       </div>
 
       <div className="borderDelete flex-col justify-items-center   mt-[20px]">
-        <p className="text-[#FFFFFF]  text-center ">Yes, Confirm Deletion</p>
+        <p onClick={handleSubmit} className="text-[#FFFFFF]  text-center ">
+          Yes, Confirm Deletion
+        </p>
       </div>
       <div className=" flex-col justify-items-center  mt-[20px]">
-        <p className="text-center ">No, Go Back</p>
+        <p onClick={handleSubmit} className="text-center ">
+          No, Go Back
+        </p>
       </div>
     </div>
   );

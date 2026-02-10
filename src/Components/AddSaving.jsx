@@ -38,7 +38,7 @@ export default function AddSaving({ onClose, savIngId }) {
   return (
     <div className="withDraw ">
       <div className="flex justify-between">
-        <h1 className="font-[700] text-[32px]">Withdraw from ‘Savings’</h1>
+        <h1 className="font-[700] text-[32px]">Add to ‘Savings’</h1>
         <button onClick={() => onClose()}>
           <CancelIcon />
         </button>
@@ -110,7 +110,7 @@ export default function AddSaving({ onClose, savIngId }) {
           onClick={handleSubmit}
           className="  text-[#FFFFFF] text-center  "
         >
-          Add pots
+          Confirm Addition
         </button>
       </div>
     </div>

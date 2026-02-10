@@ -1,9 +1,6 @@
 
 
-.recLayout{
-    display: flex;
-    gap: 24px;
-}
+
 
 .secondeHeaderB{
     width:699px ;
@@ -38,7 +35,7 @@
 
    .recLayout {
        display: flex;
-       
+       min-width: none;
        gap: 24px;
    }
 
@@ -51,13 +48,14 @@
           .RecBorder {
               display: flex;
              flex-direction: column;
-              flex-basis: 337px;
-              max-height: 190px;
-              height: auto;
+              max-width: 337px;
+              height: 190px;
+              
               flex-shrink: 1;
               flex-grow: 1;
               width: 100%;
               gap: 20px;
+              min-width: none;
               padding: 24px;
               background-color: #201F24;
               border-radius: 12px;
@@ -65,12 +63,12 @@
     
           .RecBorderB {
               flex-basis: 337px;
-              max-height: 190px;
+              height: 204px;
               width: 100%;
-              height: auto;
+              
               flex-shrink: 1;
               flex-grow: 1;
-    
+     min-width: none;
               padding: 20px;
              margin-top: 20px;
               border-radius: 12px;
@@ -84,8 +82,8 @@
                       gap: 16px;
                   }
           .secondeHeaderB {
-              flex-basis: 688px;
-              max-height: 742px;
+              flex-basis: 699px;
+              height: 742px;
               width: 100%;
               height: auto;
               flex-shrink: 1;
@@ -104,6 +102,7 @@
 
                                    .padRec {
                                        padding: 40px 32px 40px 32px;
+                                     
                                    }
 
 }

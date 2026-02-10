@@ -1,6 +1,10 @@
+body {
+    font-family: "Public Sans", sans-serif;
+}
 
-
-
+button{
+    cursor: pointer;
+}
 
 .nav:hover .icon {
     color: #F2F2F2;
@@ -13,18 +17,7 @@
     transition: 0.5s ease-in-out;
 }
 
-.dropDwon{
-  background-color: white;
-  text-align: justify;
-  display: block;
-  color: black;
-  padding: 12px 20px 12px 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 16px rgba(0,0,0, 0.5);
-    margin-top: 8px;
-    
-   transition: all 0.3s ease-in-out;
-}
+
 
 .sortBorder{
     position: relative;
@@ -103,9 +96,17 @@ transition: 0.3 ease-in-out ;
 input:hover::placeholder{
 
 color: #201F24;
-transform: translateY(-10);
+transform: translateY(-25px);
 transition: 0.3s ease-in-out;
 }
+
+input::-webkit-inner-spin-button,::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
 
 
 
@@ -156,7 +157,18 @@ background-color: #98908B;
 }
 
 @media (min-width:1024px) {
+.dropDwon {
+        background-color: white;
+        text-align: justify;
+        display: block;
+        color: black;
+        padding: 12px 20px 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+        margin-top: 40px;
 
+        transition: all 0.3s ease-in-out;
+    }
     .slidebar {
             display: flex;
             flex-direction: row;
@@ -336,7 +348,18 @@ background-color: #98908B;
 }
 
  @media (min-width:763px) and (max-width:1023px) {
+    .dropDwon {
+            background-color: white;
+            text-align: justify;
+            display: block;
+            color: black;
+            padding: 12px 20px 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
     
+            transition: all 0.3s ease-in-out;
+        }
     .catButton {
             width: 177px;
             height: 45px;
@@ -469,7 +492,7 @@ background-color: #98908B;
         padding: 12px 20px 12px 20px;
         border-radius: 8px;
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
-        margin-top: 8px;
+        margin-top: 18px;
 
         transition: all 0.3s ease-in-out;
     }
@@ -488,7 +511,9 @@ background-color: #98908B;
         width: 100%;
 
         padding: 20px;
-        overflow-y: visible;
+
+        overflow-y: scroll;
+       
       
        
     }
@@ -514,6 +539,7 @@ background-color: #98908B;
 
                 .sortIco {
                     display: flex;
+                    flex-direction: column;
                     justify-content: end;
                     width: 100%;
                     
@@ -531,7 +557,7 @@ background-color: #98908B;
                     flex-shrink: 1;
                     height: 45px;
                     width: 100%;
-                   
+                  
                    display: flex;
                    justify-content: space-evenly;
                     
@@ -539,12 +565,12 @@ background-color: #98908B;
                     
                 }
   .input {
-      max-width: 215px;
+      flex-basis: 215px;
       height: 45px;
       flex-shrink: 1;
-      width: 100%;
-    
+      flex-grow: 1;
      
+     width: 100%;
    
       border: 1px solid ;
       border-radius: 10px;
@@ -557,11 +583,7 @@ background-color: #98908B;
       
 
   }
-  .searchBut{
-    position:relative;
-    right: 30px;
-    
-  }
+ 
 
   .prevBorder {
       width: 48px;

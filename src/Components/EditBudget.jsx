@@ -3,7 +3,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import dataJson from "../../data.json";
-export default function EditBudget({ onClose, budgetId }) {
+export default function EditBudget({ onClose, currentBudget }) {
   const colors = [
     { name: "Green", hex: "#008080" },
     { name: "Yellow", hex: "#FFDAB9" },
@@ -24,35 +24,29 @@ export default function EditBudget({ onClose, budgetId }) {
   const [action, setAction] = useState(false);
   const [actionTwo, setActionTwo] = useState(false);
   const [color, setColor] = useState(colors[0]);
-  const [cate, setCate] = useState("");
+  const [cate, setCate] = useState(" ");
   const [amount, setAmount] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [dataList, setDataList] = useState(null);
-  const [currentData, setCurrentData] = useState("");
+
   const [data, setdata] = useState(dataJson.budgets);
 
-  useEffect(() => {
-    fetch("/data.json");
-
-    const currentBudget = data.find((b) => b.category === budgetId);
-    if (currentBudget) {
-      setCate(currentBudget.category);
-
-      setAmount(currentBudget.maximum);
-    }
-    setLoading(false);
-  }, [budgetId]);
-
-  console.log("add Bud", data);
+  if (!data) return <p>Loading</p>;
 
   function handleSubmit() {
     onClose();
   }
 
+  useEffect(() => {
+    if (currentBudget) {
+      setCate(currentBudget.category);
+      setAmount(currentBudget.maximum);
+    }
+  }, [currentBudget]);
+
+  console.log("add Bud", data);
   return (
     <div className="addBud">
       <div className="flex justify-between">
-        <h1 className="font-[700] text-[32px]">Edits Budget</h1>
+        <h1 className="font-[700] text-[32px]">Add New Budget</h1>
         <button onClick={() => onClose()}>
           <CancelIcon />
         </button>
@@ -68,25 +62,24 @@ export default function EditBudget({ onClose, budgetId }) {
       <div className="editBorderInput">
         <div>
           <label className="font-[700] text-[12px] text-[#696868]">
-            Budget Category{" "}
+            Budget Category
           </label>
           <div className="borderInput">
             <button
-              onClick={() => setAction(true)}
+              onClick={() => setAction(!action)}
               className="flex justify-between w-full pl-[20px] pr-[20px] pt-[12px] pb-[12px]"
             >
               {cate} <ArrowDropDownIcon />
             </button>
           </div>
           {action && (
-            <ul className="bg-[#FFFFFF]">
+            <ul className=" colorBoder">
               {data.map((item, i) => {
                 return (
                   <li
                     key={i}
                     onClick={() => {
                       setCate(item.category);
-
                       setAction(false);
                     }}
                   >
@@ -96,6 +89,7 @@ export default function EditBudget({ onClose, budgetId }) {
               })}
             </ul>
           )}
+          <div></div>
         </div>
 
         <div className="mt-[16px]">
@@ -108,25 +102,28 @@ export default function EditBudget({ onClose, budgetId }) {
             </span>
             <input
               className="outline-none absolute  top-[25%] left-[45px]  "
-              type="text"
-              onChange={(e) => setAmount(e.target.value)}
+              type="number"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              inputmode="numeric"
+              pattern="[0-9]*"
               value={amount}
+              onChange={(e) => setAmount(e.target.value)}
               placeholder="e.g. 2000"
             />
           </div>
         </div>
         <div className="mt-[16px]">
           <label className="font-[700] text-[12px] text-[#696868]">Theme</label>
-          <div className=" borderInput flex items-center ">
+          <div className="relative borderInput flex relative">
             <button
-              onClick={() => setActionTwo(true)}
-              className="flex items-center gap-[16px] p-[20px] "
+              onClick={() => setActionTwo(!actionTwo)}
+              className="flex p-[20px] relative"
             >
               <div
                 style={{ backgroundColor: color.hex }}
-                className={`  w-[16px] h-[16px] rounded-full  `}
+                className={` absolute top-[25%] s w-[16px] h-[16px] rounded-full  `}
               ></div>
-              <p className=" font-[400px] text-[14px] whitespace-nowrap">
+              <p className=" absolute  top-[25%] left-[45px] font-[400px] text-[14px] whitespace-nowrap ">
                 {color.name}
               </p>
             </button>
@@ -137,20 +134,18 @@ export default function EditBudget({ onClose, budgetId }) {
               {colors.map((items, i) => (
                 <li
                   key={i}
-                  className="flex items-center justify-between p-[20px] "
+                  className="flex justify-between p-[20px] "
                   onClick={() => {
                     setColor(items);
                     setActionTwo(false);
                   }}
                 >
-                  <div className="flex items-center gap-[16px] relative gap-[12px]">
+                  <div className="flex gap-[12px]">
                     <div
-                      className=" rounded-full  w-[16px] h-[16px] rounded-full "
+                      className="w-4 h-4 rounded-full "
                       style={{ backgroundColor: items.hex }}
                     ></div>
-                    <span className=" font-[400px] text-[14px] whitespace-nowrap">
-                      {items.name}
-                    </span>
+                    <span className="whitespace-nowrap">{items.name}</span>
                   </div>
 
                   {items.name === color.name && (
@@ -163,12 +158,14 @@ export default function EditBudget({ onClose, budgetId }) {
             </ul>
           )}
         </div>
+
         <div className="borderInputSaved bg-[#201F24] mt-[20px] flex-col justify-items-center ">
           <button
+            type="button"
             onClick={handleSubmit}
             className="  text-[#FFFFFF] text-center  "
           >
-            Save Change
+            Add Budget
           </button>
         </div>
       </div>

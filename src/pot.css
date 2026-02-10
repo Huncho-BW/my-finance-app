@@ -87,8 +87,10 @@ transition: 0.3s ease-in-out;
 
           .potButton {
               flex-basis: 143.5px;
-              min-height: 53px;
-              height: auto;
+              height: 53px;
+              font-size: 14px;
+              font-weight: 700;
+              
               padding: 16px;
               flex-grow: 1;
               flex-shrink: 1;
@@ -145,6 +147,8 @@ transition: 0.3s ease-in-out;
                 .potButton {
                     flex-basis: 312px;
                     max-height: 53px;
+                    font-size: 14px;
+                        font-weight: 700;
                     padding: 16px;
                     width: 100%;
                     flex-grow: 1;
@@ -173,8 +177,8 @@ transition: 0.3s ease-in-out;
     }
 
   .secondSec {
-      flex-basis: 518px;
-      max-height: 303px;
+    flex-basis: 337px;
+        min-height: 481px;
 
       flex-basis: 1;
       flex-shrink: 1;
@@ -207,6 +211,8 @@ transition: 0.3s ease-in-out;
   .potButton {
       flex-basis: 277px;
       max-height: 53px;
+    font-size: 14px;
+        font-weight: 700;
       padding: 16px;
       width: 100%;
       flex-grow: 1;

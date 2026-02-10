@@ -8,7 +8,7 @@ export default function RightContent() {
 
   if (!data) return <p>Loading</p>;
   return (
-    <div className="gapses">
+    <div className="flex flex-col gap-[20px]">
       <section>
         <div className="rightBox    lg:p-[32px] lg:gap-[20px]  ">
           <div className="flex mb-[20px]   justify-between">
@@ -52,7 +52,7 @@ export default function RightContent() {
         </div>
       </section>
 
-      <section className="">
+      <section className=" ">
         <div className="rightBoxTwo p-[32px]">
           <div className="flex mb-2   justify-between">
             <h1

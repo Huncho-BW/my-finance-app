@@ -85,6 +85,7 @@ export default function Entain() {
                   <div className="model">
                     <EditBudget
                       budgetId={item.category}
+                      currentBudget={item}
                       onClose={() => setAction(false)}
                     />
                   </div>
@@ -134,15 +135,15 @@ export default function Entain() {
             </div>
 
             <div className="lastSpend">
-              <div className="flex mb-2  justify-between">
-                <h1 className="w-[43] font-bold text-[16px] h-[24px] ">
+              <div className="flex mb-2 items-center  justify-between">
+                <h1 className="w-[43] font-[700] text-[16px] h-[24px] ">
                   Latest Spending
                 </h1>
                 <button className="font-[400] text-[14px] text-#696868">
                   See All
                 </button>
               </div>
-              <div className="lg:p-[20px] md:p-[20px] padd  ">
+              <div className="lg:p-[20px] md:p-[20px]   ">
                 {tran
                   .filter((t) => t.category === item.category)
                   .slice(0, 3)
@@ -171,7 +172,10 @@ export default function Entain() {
                             )}
                           </h1>
 
-                          <h1 className="font-[400] text-[12px] text-[#696868] text-left">
+                          <h1
+                            className=" whitespace-nowrap
+                            font-[400] text-[12px] text-[#696868] text-left"
+                          >
                             {new Date(t.date).toLocaleDateString(
                               "en-GB",
                               option,

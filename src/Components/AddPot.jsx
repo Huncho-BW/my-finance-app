@@ -92,18 +92,16 @@ export default function AddPots({ onClose }) {
         </div>
         <div className="mt-[16px]">
           <label className="font-[700] text-[12px] text-[#696868]">Theme</label>
-          <div className="relative borderInput flex relative">
+          <div className="relative borderInput items-center  flex relative">
             <button
-              onClick={() => setActionTwo(true)}
-              className="flex p-[20px] relative"
+              onClick={() => setActionTwo(!actionTwo)}
+              className="flex items-center gap-[16px] p-[20px]  relative"
             >
               <div
                 style={{ backgroundColor: color.hex }}
-                className={` absolute top-[25%] s w-[16px] h-[16px] rounded-full  `}
+                className={`  w-[16px] h-[16px] rounded-full  `}
               ></div>
-              <p className=" absolute  top-[25%] left-[45px] font-[400px] text-[14px]">
-                {color.name}
-              </p>
+              <p className=" ">{color.name}</p>
             </button>
           </div>
 
@@ -112,13 +110,13 @@ export default function AddPots({ onClose }) {
               {colors.map((items, i) => (
                 <li
                   key={i}
-                  className="flex justify-between p-[20px] "
+                  className="flex justify-between items-center p-[20px] "
                   onClick={() => {
                     setColor(items);
                     setActionTwo(false);
                   }}
                 >
-                  <div className="flex gap-[12px]">
+                  <div className="flex gap-[12px] items-center">
                     <div
                       className="w-4 h-4 rounded-full "
                       style={{ backgroundColor: items.hex }}

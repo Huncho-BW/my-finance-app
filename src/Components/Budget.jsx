@@ -20,7 +20,7 @@ export default function Budget() {
           </div>
         )}
       </div>
-      <div className="flex budDisplay mt-[32px] gap-[20px]">
+      <div className="  budDisplay mt-[32px] ">
         <div>
           <SummarySpend />
         </div>

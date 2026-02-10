@@ -11,7 +11,7 @@
         border-radius: 8px;
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
      
-       
+       margin-top: 18px;
         
         transition: all 0.3s ease-in-out;
 }
@@ -31,14 +31,7 @@
         color: white;
         background-color:#696868;
 }
-.Entain{
-    width: 688px;
-    height: 510px ;
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 32px;
-    
-}
+
 
 .EntainBord {
     width: 16px;
@@ -59,9 +52,11 @@
 
 .colorBoder{
 
-    max-width:496px ;
+    flex-basis:496px ;
     max-height: 298px ;
     width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
     
        overflow-y: auto;
         overflow-x: hidden;
@@ -70,6 +65,7 @@
         padding: 8px 0;
         border: 1px solid #e2e8f0;
         border-radius: 8px;
+        background-color: white;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
@@ -234,7 +230,7 @@
          min-width: none;
          flex-shrink: 1;
          font: 1em sans-serif;
-         
+         gap: 20px;
         
     }
 
@@ -256,7 +252,7 @@
 
                 .Entain {
                     flex-basis: 343px;
-                    min-height: 583px;
+                    height: 486px;
                     width: 100%;
                     min-width: none;
                     flex-shrink: 1;
@@ -323,6 +319,7 @@
             flex-shrink: 1;
             font: 1em sans-serif;
             height: 100%;
+            gap: 20px;
            
     
         }
@@ -375,8 +372,8 @@
               
                                    .Entain {
                                        flex-basis: 688px;
-                                       max-height: 510px;
-                                       height: auto;
+                                       height: 510px;
+                                       
                                        width: 100%;
                                        min-width: none;
                                        flex-shrink: 1;
@@ -450,13 +447,31 @@
 
 @media (min-width:1024px) {
   
+    .sumLay {
+        
+          
+    
+        flex-basis: 428px;
+            min-height: 599px;
+            height: auto;
+            width: 100%;
+            min-width: none;
+            flex-shrink: 1;
+            flex-grow: 1;
+            background-color: white;
+      
+           
+    
+        }
     
         .budDisplay {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+           grid-template-rows: 1fr 1fr ;
+           grid-template-columns: 1fr 1fr;
+           gap: 20px;
             
             flex-basis: 1060px;
-            max-height: 2112px;
+            min-height: 2112px;
              width: 100%;
              
             flex-wrap: nowrap;
@@ -496,8 +511,9 @@
                  }
 
                   .Entain {
-                      flex-basis: 608px;
-                      max-height: 510px;
+                    flex-basis: 608px;
+                      min-height: 510px;
+                      height: auto;
                        
                       width: 100%;
                       min-width: none;
@@ -560,6 +576,7 @@
          .lastSpend {
              flex-basis: 544px;
              height: 254px;
+             
              width: 100%;
              min-width: none;
              flex-shrink: 1;
