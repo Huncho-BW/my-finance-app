@@ -12,7 +12,7 @@ export default function OverView() {
         <ListedPrice />
       </div>
 
-      <div className="lg:grid lg:grid-cols-[1fr_1fr]  lg:min-h-screen sm:flex-col gap-[20px]  md:flex md:flex-col sm:gap-[20px] md:gap-[20px]    md:gap-[20px]  ">
+      <div className="lg:grid lg:grid-cols-[1fr_1fr]  lg:min-h-screen sm:flex-col gap-[20px]  md:flex md:flex-col sm:gap-[20px] md:gap-[20px]   gapses md:gap-[20px]  ">
         <section>
           <LeftContent />
         </section>

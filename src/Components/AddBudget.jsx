@@ -3,7 +3,8 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import dataJson from "../../data.json";
-export default function AddBudget({ onClose }) {
+import { ThemeContext } from "@emotion/react";
+export default function AddBudget({ budget, setBudget, onClose }) {
   const colors = [
     { name: "Green", hex: "#008080" },
     { name: "Yellow", hex: "#FFDAB9" },
@@ -24,18 +25,22 @@ export default function AddBudget({ onClose }) {
   const [action, setAction] = useState(false);
   const [actionTwo, setActionTwo] = useState(false);
   const [color, setColor] = useState(colors[0]);
+  const [colorHex, setColorHex] = useState("");
   const [cate, setCate] = useState(" Entartianment");
   const [amount, setAmount] = useState("");
 
-  const [data, setdata] = useState(dataJson.budgets);
-
-  if (!data) return <p>Loading</p>;
-
   function handleSubmit() {
+    const newBudget = {
+      category: cate,
+      maximum: Number(amount),
+      theme: colorHex,
+    };
+
+    setBudget([...budget, newBudget]);
+
     onClose();
   }
 
-  console.log("add Bud", data);
   return (
     <div className="addBud">
       <div className="flex justify-between">
@@ -67,7 +72,7 @@ export default function AddBudget({ onClose }) {
           </div>
           {action && (
             <ul className=" colorBoder">
-              {data.map((item, i) => {
+              {budget.map((item, i) => {
                 return (
                   <li
                     key={i}
@@ -130,6 +135,7 @@ export default function AddBudget({ onClose }) {
                   className="flex justify-between p-[20px] "
                   onClick={() => {
                     setColor(items);
+                    setColorHex(items.hex);
                     setActionTwo(false);
                   }}
                 >

@@ -1,18 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
-import dataJson from "../../data.json";
-export default function AddSaving({ onClose, savIngId }) {
-  const [amount, setAmount] = useState("");
 
-  const [target, setTarget] = useState("");
-  const [total, setTotals] = useState("");
+export default function AddSaving({ onClose, potsId, pot, setPot }) {
+  const [amount, setAmount] = useState(null);
+
+  const [target, setTarget] = useState(null);
+  const [total, setTotals] = useState(null);
   const [theme, setTheme] = useState("");
   const [loading, setLoading] = useState(true);
-  const [data, setdata] = useState(dataJson.pots);
 
   useEffect(() => {
-    const currentSaving = data.find((n) => n.name === savIngId);
+    const currentSaving = pot.find((n) => n.name === potsId);
 
     if (currentSaving) {
       setTarget(currentSaving.target);
@@ -20,9 +19,8 @@ export default function AddSaving({ onClose, savIngId }) {
       setTheme(currentSaving.theme);
     }
     setLoading(false);
-  }, [savIngId]);
+  }, [potsId]);
 
-  if (!data) return <p>loading</p>;
   const currentAmount = Math.min(Math.ceil((total / target) * 100), 100);
   const newAmount = Number(total) + Number(amount);
   const newlyAdded = Math.min(Math.ceil((newAmount / target) * 100), 100);
@@ -32,6 +30,15 @@ export default function AddSaving({ onClose, savIngId }) {
   console.log("my new amount ", fletTo);
 
   function handleSubmit() {
+    const newTotal = newAmount;
+    const AddSaving = {
+      ...pot.find((p) => p.name === potsId),
+      total: Number(newTotal),
+      target: Number(amount),
+    };
+    setPot((prev) =>
+      prev.map((item) => (item.name === potsId ? AddSaving : item)),
+    );
     onClose();
   }
 

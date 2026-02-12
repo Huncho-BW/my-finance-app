@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import SummarySpend from "./SummarySpend";
 import Entain from "./Entartainment";
 import AddBudget from "./AddBudget";
+
+import dataJson from "../../data.json";
 export default function Budget() {
   const [action, setAction] = useState(null);
+  const [budget, setBudget] = useState(dataJson.budgets);
   return (
     <div className="p-[40px]  bg-[#F8F4F0]">
       <div className="flex justify-between ">
@@ -15,7 +18,11 @@ export default function Budget() {
         {action === "AddnewBudget" && (
           <div className="model_layers">
             <div className="model">
-              <AddBudget onClose={() => setAction(false)} />
+              <AddBudget
+                budget={budget}
+                setBudget={setBudget}
+                onClose={() => setAction(false)}
+              />
             </div>
           </div>
         )}
@@ -25,7 +32,7 @@ export default function Budget() {
           <SummarySpend />
         </div>
         <div>
-          <Entain />
+          <Entain setBudget={setBudget} budget={budget} />
         </div>
       </div>
     </div>

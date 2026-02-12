@@ -1,48 +1,43 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import EditBudget from "./EditBudget";
 import Delete from "./delete";
 import dataJson from "../../data.json";
 
-export default function Entain() {
-  const [data, setdata] = useState(dataJson.budgets);
+export default function Entain({ budget, setBudget }) {
   const [tran, setTran] = useState(dataJson.transactions);
 
   const [open, setOpen] = useState(null);
   const [action, setAction] = useState(null);
   const [actionTwo, setActionTwo] = useState(null);
 
-  const navigate = useNavigate();
   const option = {
     day: "numeric",
     month: "long",
     year: "numeric",
   };
 
-  if (!data) return <p>Loading</p>;
-
   let target = ["Entertainment", "Bills", "Dining Out", "Personal Care"];
 
-  let getBudget = data.map((item) => item);
-  console.log("this is my budget", getBudget);
   let getCat = target.flatMap((cat) =>
     tran.filter((item) => item.category === cat).slice(0, 3),
   );
 
   console.log(" my filtter categories", getCat);
 
-  const allData = [...getBudget, ...getCat];
-  console.log("all data gain :", allData);
   return (
     <div>
-      {getBudget.map((item, i) => (
+      {budget?.map((item, i) => (
         <div className="Entain">
           <div key={i}>
             <div className="flex justify-between ">
               <div className="flex justify-between  ">
-                <div className={`EntainBord bg-[${item.theme}]`}></div>
+                <div
+                  style={{ backgroundColor: item.theme }}
+                  className={`EntainBord `}
+                ></div>
                 <h1 className="ml-[16px] font-[700] text-[20px]">
                   {item.category}
                 </h1>
@@ -86,6 +81,8 @@ export default function Entain() {
                     <EditBudget
                       budgetId={item.category}
                       currentBudget={item}
+                      setBudget={setBudget}
+                      budget={budget}
                       onClose={() => setAction(false)}
                     />
                   </div>
@@ -95,7 +92,12 @@ export default function Entain() {
               {actionTwo === i && (
                 <div className="model_layers">
                   <div className="model">
-                    <Delete onClose={() => setActionTwo(false)} />
+                    <Delete
+                      currentBudget={item}
+                      setBudget={setBudget}
+                      budget={budget}
+                      onClose={() => setActionTwo(false)}
+                    />
                   </div>
                 </div>
               )}
@@ -136,14 +138,14 @@ export default function Entain() {
 
             <div className="lastSpend">
               <div className="flex mb-2 items-center  justify-between">
-                <h1 className="w-[43] font-[700] text-[16px] h-[24px] ">
+                <h1 className="w-[43] font-[700] whitespace-nowrap text-[16px] h-[24px] ">
                   Latest Spending
                 </h1>
-                <button className="font-[400] text-[14px] text-#696868">
+                <button className="font-[400] whitespace-nowrap text-[14px] text-#696868">
                   See All
                 </button>
               </div>
-              <div className="lg:p-[20px] md:p-[20px]   ">
+              <div className="lg:p-[20px] md:p-[20px] mt-[20px]   ">
                 {tran
                   .filter((t) => t.category === item.category)
                   .slice(0, 3)

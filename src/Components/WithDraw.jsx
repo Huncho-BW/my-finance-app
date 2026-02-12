@@ -1,31 +1,26 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
-import dataJson from "../../data.json";
-export default function AddSaving({ onClose, withdrawId }) {
-  const [amount, setAmount] = useState("");
 
-  const [target, setTarget] = useState("");
-  const [total, setTotals] = useState("");
+export default function AddSaving({ onClose, withdrawId, pot, setPot }) {
+  const [amount, setAmount] = useState(null);
+
+  const [target, setTarget] = useState(0);
+  const [total, setTotals] = useState(null);
   const [theme, setTheme] = useState("");
   const [loading, setLoading] = useState(true);
-  const [data, setdata] = useState(dataJson.pots);
-  const handleSubmit = () => {
-    onClose();
-  };
 
   useEffect(() => {
-    const currentSaving = data.find((n) => n.name === withdrawId);
+    const currentSaving = pot.find((n) => n.name === withdrawId);
 
     if (currentSaving) {
-      setTarget(currentSaving.target);
-      setTotals(currentSaving.total);
+      setTarget(Number(currentSaving.target) || 0);
+      setTotals(Number(currentSaving.total) || 0);
       setTheme(currentSaving.theme);
     }
     setLoading(false);
   }, [withdrawId]);
 
-  if (!data) return <p>loading</p>;
   const currentAmount = Math.min(Math.ceil((total / target) * 100), 100);
   const newAmount = Number(total) - Number(amount);
   const fletTo = amount
@@ -37,6 +32,19 @@ export default function AddSaving({ onClose, withdrawId }) {
   console.log("my fleTo  ", fletTo);
 
   console.log("my new amount ", fletTo);
+
+  const handleSubmit = () => {
+    const withdrawlTotal = fletTo;
+    const withdrewl = {
+      ...pot.find((p) => p.name === withdrawId),
+      total: withdrawlTotal,
+    };
+
+    setPot((prev) =>
+      prev.map((item) => (item.name === withdrawId ? withdrewl : item)),
+    );
+    onClose();
+  };
   return (
     <div className="withDraw ">
       <div className="flex justify-between">

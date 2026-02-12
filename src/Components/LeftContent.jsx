@@ -115,7 +115,7 @@ export default function LeftContent() {
             {data.map((dat, index) => (
               <li className="overflow-hidden " key={index}>
                 <div className="flex justify-between ">
-                  <div className="flex justify-between ">
+                  <div className="tranGap ">
                     <img
                       className="imgListTrac "
                       src={`${dat.avatar}`}

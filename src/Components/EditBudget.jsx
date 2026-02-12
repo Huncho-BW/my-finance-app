@@ -3,7 +3,12 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import dataJson from "../../data.json";
-export default function EditBudget({ onClose, currentBudget }) {
+export default function EditBudget({
+  onClose,
+  currentBudget,
+  budget,
+  setBudget,
+}) {
   const colors = [
     { name: "Green", hex: "#008080" },
     { name: "Yellow", hex: "#FFDAB9" },
@@ -25,13 +30,21 @@ export default function EditBudget({ onClose, currentBudget }) {
   const [actionTwo, setActionTwo] = useState(false);
   const [color, setColor] = useState(colors[0]);
   const [cate, setCate] = useState(" ");
-  const [amount, setAmount] = useState("");
 
-  const [data, setdata] = useState(dataJson.budgets);
-
-  if (!data) return <p>Loading</p>;
+  const [amount, setAmount] = useState();
 
   function handleSubmit() {
+    const editBuget = {
+      category: cate,
+      maximum: Number(amount),
+      theme: color.hex,
+    };
+    setBudget((prev) =>
+      prev.map((item) =>
+        item.category === currentBudget.category ? editBuget : item,
+      ),
+    );
+
     onClose();
   }
 
@@ -39,10 +52,15 @@ export default function EditBudget({ onClose, currentBudget }) {
     if (currentBudget) {
       setCate(currentBudget.category);
       setAmount(currentBudget.maximum);
+
+      const findColor = colors.find((c) => c.hex === currentBudget.theme);
+
+      if (findColor) {
+        setColor(findColor);
+      }
     }
   }, [currentBudget]);
 
-  console.log("add Bud", data);
   return (
     <div className="addBud">
       <div className="flex justify-between">
@@ -74,7 +92,7 @@ export default function EditBudget({ onClose, currentBudget }) {
           </div>
           {action && (
             <ul className=" colorBoder">
-              {data.map((item, i) => {
+              {budget?.map((item, i) => {
                 return (
                   <li
                     key={i}
@@ -103,9 +121,6 @@ export default function EditBudget({ onClose, currentBudget }) {
             <input
               className="outline-none absolute  top-[25%] left-[45px]  "
               type="number"
-              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              inputmode="numeric"
-              pattern="[0-9]*"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="e.g. 2000"
@@ -137,6 +152,7 @@ export default function EditBudget({ onClose, currentBudget }) {
                   className="flex justify-between p-[20px] "
                   onClick={() => {
                     setColor(items);
+
                     setActionTwo(false);
                   }}
                 >

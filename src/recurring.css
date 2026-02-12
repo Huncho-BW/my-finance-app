@@ -32,6 +32,10 @@
 
 @media (min-width:1024px){
   
+    .tranGap{
+      display: flex;
+      justify-content: space-between;
+    }
 
    .recLayout {
        display: flex;
@@ -109,7 +113,10 @@
 
 @media (min-width:768px) and (max-width:1023px) {
    
-
+.tranGap {
+        display: flex;
+        justify-content: space-between;
+    }
          .recLayout {
              display: flex;
              flex-direction: column;
@@ -177,7 +184,11 @@
 }
 
 @media (min-width:343px) and (max-width:764px){
-    
+    .tranGap {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
     .padRec{
         padding: 24px 16px 24px 16px;
     }

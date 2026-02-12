@@ -9,7 +9,7 @@ import AddPots from "./AddPot";
 import EditPot from "./EditPot";
 import dataJson from "../../data.json";
 export default function Pots() {
-  const [data, setdata] = useState(dataJson.pots);
+  const [pot, setPot] = useState(dataJson.pots);
   const [action, setAction] = useState(null);
   const [actionTwo, setActionTwo] = useState(false);
   const [actionThree, setActionThree] = useState(null);
@@ -18,9 +18,7 @@ export default function Pots() {
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
 
-  if (!data) return <p>loading</p>;
-
-  const fletTo = data.flatMap((item) => ({
+  const fletTo = pot.flatMap((item) => ({
     ...item,
     perntage: Math.ceil((item.total / item.target) * 100),
   }));
@@ -38,7 +36,11 @@ export default function Pots() {
           {action && (
             <div className="model_layers">
               <div className="model">
-                <AddPots onClose={() => setAction(false)} />
+                <AddPots
+                  pot={pot}
+                  setPot={setPot}
+                  onClose={() => setAction(false)}
+                />
               </div>
             </div>
           )}
@@ -94,6 +96,8 @@ export default function Pots() {
                   <div className="model_layers">
                     <div className="model">
                       <EditPot
+                        pot={pot}
+                        setPot={setPot}
                         potsId={item.name}
                         onClose={() => setOpenEdit(false)}
                       />
@@ -104,7 +108,12 @@ export default function Pots() {
                 {openDelete === i && (
                   <div className="model_layers">
                     <div className="model">
-                      <DeletePots onClose={() => setOpenDelete(false)} />
+                      <DeletePots
+                        pot={pot}
+                        setPot={setPot}
+                        potsId={item.name}
+                        onClose={() => setOpenDelete(false)}
+                      />
                     </div>
                   </div>
                 )}
@@ -159,7 +168,9 @@ export default function Pots() {
                   <div className="model_layers">
                     <div className="model">
                       <AddSaving
-                        savIngId={item.name}
+                        pot={pot}
+                        setPot={setPot}
+                        potsId={item.name}
                         onClose={() => setActionThree(false)}
                       />
                     </div>
@@ -179,6 +190,8 @@ export default function Pots() {
                   <div className="model_layers">
                     <div className="model">
                       <Withdral
+                        pot={pot}
+                        setPot={setPot}
                         withdrawId={item.name}
                         onClose={() => setActionFour(false)}
                       />

@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import dataJson from "../../data.json";
-export default function AddPots({ onClose }) {
+
+export default function AddPots({ pot, setPot, onClose }) {
   const colors = [
     { name: "Green", hex: "#008080" },
     { name: "Yellow", hex: "#FFDAB9" },
@@ -22,18 +22,22 @@ export default function AddPots({ onClose }) {
     { name: "Orange", hex: "#FFA500" },
   ];
 
-  const [action, setAction] = useState(false);
+  const [amount, setAmount] = useState("");
   const [actionTwo, setActionTwo] = useState(false);
   const [color, setColor] = useState(colors[0]);
   const [name, setName] = useState("");
 
-  const [data, setdata] = useState(dataJson.budgets);
   const Max_Chart = 30;
   const leftChart = Max_Chart - name.length;
 
-  if (!data) return <p>Loading</p>;
-
   function hundleSubmit() {
+    const newPot = {
+      name: name,
+      target: Number(amount),
+      theme: color.hex,
+    };
+
+    setPot([...pot, newPot]);
     onClose();
   }
 
@@ -66,6 +70,7 @@ export default function AddPots({ onClose }) {
               }}
               className="outline-none p-[20px]"
               type="text"
+              placeholder="E.g Rainy Day"
             />
           </div>
           <div className="flex-col justify-items-end">
@@ -85,7 +90,9 @@ export default function AddPots({ onClose }) {
             </span>
             <input
               className="outline-none absolute  top-[25%] left-[45px]  "
-              type="text"
+              type="number"
+              onChange={(e) => setAmount(e.target.value)}
+              value={amount}
               placeholder="e.g. 2000"
             />
           </div>

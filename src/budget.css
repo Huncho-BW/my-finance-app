@@ -2,9 +2,11 @@
 
 .dropDwonBudget{
     background-color: white;
+    display: flex;
+    flex-direction: column;
         width: 134px;
         height: 91px;
-       
+       gap:20px ;
        right: 10px;
         color: black;
         padding: 12px 20px 12px 20px;

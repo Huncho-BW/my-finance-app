@@ -1,8 +1,8 @@
 import React, { useState, useEffect, use } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import dataJson from "../../data.json";
-export default function EditPot({ onClose, potsId }) {
+
+export default function EditPot({ onClose, potsId, pot, setPot }) {
   const colors = [
     { name: "Green", hex: "#008080" },
     { name: "Yellow", hex: "#FFDAB9" },
@@ -21,27 +21,46 @@ export default function EditPot({ onClose, potsId }) {
     { name: "Orange", hex: "#FFA500" },
   ];
 
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState(null);
   const [name, setName] = useState("");
   const [color, setColor] = useState(colors[0]);
   const [loading, setLoading] = useState(true);
   const [actionTwo, setActionTwo] = useState(false);
-  const [data, setData] = useState(dataJson.pots);
+
+  const [target, setTarget] = useState(null);
+
   const Max_Chart = 30;
   const leftChart = Max_Chart - name.length;
-  const handleSubmit = () => {
-    onClose();
-  };
+
   useEffect(() => {
-    const currentPots = data.find((b) => b.name === potsId);
+    const currentPots = pot.find((b) => b.name === potsId);
+
     if (currentPots) {
       setName(currentPots.name);
       setAmount(currentPots.total);
+      setTarget(currentPots.target);
+      const foundColor = colors.find((c) => c.hex === currentPots.theme);
+
+      setColor(foundColor || colors[0]);
     }
+
     setLoading(false);
   }, [potsId]);
 
-  if (!data) return <p>loading ... </p>;
+  const handleSubmit = () => {
+    const editPot = {
+      name: name,
+      total: Number(amount),
+      target: Number(target),
+      theme: color.hex,
+    };
+
+    setPot(
+      (prev) => prev.map((items) => (items.name === potsId ? editPot : items)),
+
+      onClose(),
+    );
+  };
   return (
     <div className="editBorder">
       <div className="flex justify-between">
@@ -84,10 +103,10 @@ export default function EditPot({ onClose, potsId }) {
               $
             </span>
             <input
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={(e) => setAmount(Number(e.target.value))}
               value={amount}
               className="outline-none absolute  top-[25%] left-[45px]  "
-              type="text"
+              type="number"
               placeholder="e.g. 2000"
             />
           </div>

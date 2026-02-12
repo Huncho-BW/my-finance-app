@@ -1,7 +1,11 @@
 import React from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
-export default function DeletePots({ onClose }) {
+export default function DeletePots({ onClose, pot, setPot, potsId }) {
   function handleSubmit() {
+    const newItem = pot.filter((item) => item.name !== potsId);
+
+    setPot(newItem);
+
     onClose();
   }
 
@@ -26,7 +30,7 @@ export default function DeletePots({ onClose }) {
         </p>
       </div>
       <div className=" flex-col justify-items-center  mt-[20px]">
-        <p onClick={handleSubmit} className="text-center ">
+        <p onClick={onClose} className="text-center ">
           No, Go Back
         </p>
       </div>
